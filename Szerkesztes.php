@@ -1,6 +1,8 @@
 <?php
 require_once "db.php";
 require_once "Idojaras.php";
+
+$lista = Idojaras::beolvas();
 ?><!DOCTYPE html>
 <html lang="hu">
 <head>
