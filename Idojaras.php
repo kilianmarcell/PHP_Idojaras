@@ -12,6 +12,10 @@ class Idojaras {
           $this -> leiras = $leiras;
      }
 
+     public function getId() : int {
+          return $this -> id;
+     }
+
      public function getDatum() : DateTime {
           return $this -> datum;
      }
@@ -47,5 +51,15 @@ class Idojaras {
                          -> execute([':datum' => $this -> datum -> format('Y-m-d'),
                          ':hofok' => $this -> hofok,
                          ':leiras' => $this -> leiras]);
+     }
+
+     public function szerkesztes($szerkesztesId) {
+          global $db;
+
+          $szerkesztes = $db -> prepare('UPDATE idojaras SET datum = :datum, hofok = :hofok, leiras = :leiras WHERE id = :id')
+                         -> execute([':datum' => $this -> datum -> format('Y-m-d'),
+                         ':hofok' => $this -> hofok,
+                         ':leiras' => $this -> leiras,
+                         ':id' => $szerkesztesId]);
      }
 }

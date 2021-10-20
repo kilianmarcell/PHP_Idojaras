@@ -33,7 +33,7 @@ $lista = Idojaras::beolvas();
     <div>
         <?php
         foreach ($lista as $e) {
-            echo $e -> getDatum() -> format('Y-m-d') . " " . $e -> getHofok() . " " . $e -> getLeiras() . "<br>";
+            echo $e -> getDatum() -> format('Y-m-d') . " " . $e -> getHofok() . " " . $e -> getLeiras() . "<br><a href='Szerkesztes.php?id=" . $e -> getId() . "'><button>Szerkesztés</button></a><br><br>";
         }
         ?>
     </div>
