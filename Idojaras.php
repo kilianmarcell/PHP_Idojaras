@@ -24,7 +24,7 @@ class Idojaras {
           return $this -> leiras;
      }
 
-     public function beolvas() : array {
+     public static function beolvas() : array {
           global $db; //olyan mintha még egyszer leírnánk a $db ... -ot
 
           $lekerdezes = $db   -> query('SELECT * FROM idojaras') //query -> SQL utasítás
