@@ -1,5 +1,5 @@
 <?php
-
+require_once "db.php";
 ?><!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -10,6 +10,10 @@
 </head>
 <body>
     <form method="POST">
+        <input type="date"><br>
+        <input type="number"><br>
+        <input type="text"><br>
+        <input type="submit" value="Küldés">
     </form>
 </body>
 </html>
