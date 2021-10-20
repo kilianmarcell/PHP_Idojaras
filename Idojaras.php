@@ -38,4 +38,14 @@ class Idojaras {
 
           return $lista;
      }
+
+     public function hozzaad() {
+          global $db;
+
+          $hozzaadas = $db -> prepare('INSERT INTO idojaras(datum, hofok, leiras)
+                                        VALUES (:datum, :hofok, :leiras)')
+                         -> execute([':datum' => $this -> datum -> format('Y-m-d'),
+                         ':hofok' => $this -> hofok,
+                         ':leiras' => $this -> leiras]);
+     }
 }

@@ -2,6 +2,17 @@
 require_once "db.php";
 require_once "Idojaras.php";
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $ujDatum = $_POST['datum'] ?? null;
+    $ujNumber = $_POST['szam'] ?? null;
+    $ujSzoveg = $_POST['szoveg'] ?? null;
+    if ($ujNumber !== null && $ujSzoveg !== null) {
+        $ujIdojaras = new Idojaras(new DateTime($ujDatum), (int)$ujNumber, $ujSzoveg);
+    
+        $ujIdojaras -> hozzaad();
+    }
+}
+
 $lista = Idojaras::beolvas();
 
 ?><!DOCTYPE html>
@@ -14,9 +25,9 @@ $lista = Idojaras::beolvas();
 </head>
 <body>
     <form method="POST">
-        <input type="date"><br>
-        <input type="number"><br>
-        <input type="text"><br>
+        <input type="date" name="datum"><br>
+        <input type="number" name="szam"><br>
+        <input type="text" name="szoveg"><br>
         <input type="submit" value="Küldés">
     </form>
     <div>
