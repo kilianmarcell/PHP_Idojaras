@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+
+$bejegyzesId = $_GET['id'] ?? null;
+
+if ($bejegyzesId === null) {
+    header('Location: index.php'); //átirányítás
+    exit(); //leállítja a programot
+}
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
